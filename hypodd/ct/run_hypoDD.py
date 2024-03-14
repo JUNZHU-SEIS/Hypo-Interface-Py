@@ -84,6 +84,7 @@ class Run_HypoDD(Dataset):
         pha_lines = pha_dict[evid]
         # get loc info
         lat, lon, dep = codes[1:4]
+        if lat=='NaN':continue
         try:
             dep = round(float(dep) - dep_corr, 2)
             mag = float(codes[16])
